@@ -21,11 +21,11 @@
 
   @media #{$media-size-phone} {
     position: absolute;
-    top: 50px;
+    top: 40px;
     right: 0;
     border: none;
     margin: 0;
-    padding: 10px;
+    padding: 10px 15px 15px 10px;
   }
 
   &__inner {
@@ -42,9 +42,10 @@
       margin: 0 12px;
     }
 
+
     @media #{$media-size-phone} {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       padding: 0;
 
       li {
@@ -69,12 +70,8 @@
 
   a {
     display: inline-block;
-    margin-right: 15px;
     text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
 
     &:last-of-type {
       margin-right: 0;
@@ -84,6 +81,17 @@
 
 
 .submenu {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  
+  @media #{$media-size-phone}{
+    width: 120px;  
+    padding-top: 5px;
+    padding-bottom: 5px;
+//    margin-top: 0;
+    z-index: 4;
+  }
+
   background: $light-background-header;
 
   @media (prefers-color-scheme: dark) {
@@ -115,17 +123,29 @@
   }
 
   li.dropdown {
+    cursor: pointer;
     display: inline-block;
+
+    &:hover {
+       opacity: 0.8; 
+    }
+
   }
 
   .dropdown-content {
     display: none;
     position: absolute;
     background: $dark-background-header;
+    min-width: 160px;
+    margin-left: -15px;
+    padding-top: 20px;
+
+
 
     @media (prefers-color-scheme: light) {
       background: $light-background-header;
     }
+
     
     [data-theme=dark] & {
       background: $dark-background-header;
@@ -136,15 +156,23 @@
     }
   }
 
+
   .dropdown-content a {
-    padding: 12px 20px;
     text-decoration: none;
     display: block;
     text-align: left;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px
+     
   }
 
   .dropdown-content a:hover {
     background: $dark-background-header;
+
+    &:hover {
+      opacity: 0.3;
+    }
     
     @media (prefers-color-scheme: light) {
       background: $light-background-header;
@@ -161,5 +189,10 @@
 
   .dropdown:hover .dropdown-content {
     display: block;
+
+    @media #{$media-size-phone}{
+      display: none;
+    }
+    
   }
 }

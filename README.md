@@ -1,10 +1,14 @@
-# Hello Friend NG
+# Hello Friend 4s3ti
 
-![Hello Friend NG](https://dsh.re/d914c)
+[![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+
+![Hello Friend 4s3ti](images/Screenshot.png)
 
 ## General informations
 
-This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for their great work.
+This theme is a mix between [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) and the original [hello-friend](https://github.com/panr/hugo-theme-hello-friend) considering both have features I like and lack others, I've decided to roll up my sleeve and tweak it a bit, the biggest change is most likely a dependency on fontawesome kits. 
+
+You can see it in action here: https://4s3ti.net
 
 ---
 
@@ -20,6 +24,7 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
   - [Favicon](#favicon)
   - [Audio Support](#audio-support)
 - [Social Icons](#social-icons)
+- [Hide Title and Language on single pages](#hide-title-and-language-on-single-pages)
 - [Known issues](#known-issues)
 - [How to edit the theme](#how-to-edit-the-theme)
 - [Changelog](CHANGELOG.md)
@@ -30,44 +35,63 @@ This theme was highly inspired by the [hello-friend](https://github.com/panr/hug
 
 ## Features
 
+### Original features
+
 - Theming: **dark/light mode**, depending on your system preferences or the users choice
 - Great reading experience thanks to [**Inter font**](https://rsms.me/inter/), made by [Rasmus Andersson](https://rsms.me/about/)
 - Nice code highlighting thanks to [**PrismJS**](https://prismjs.com)
 - An easy way to modify the theme with Hugo tooling
 - Fully responsive
 - Audio support for posts (thanks to [@talbotp](https://github.com/talbotp))
-- Builtin (enableable/disableable) multilanguage menu
-- Support for social icons
-- Support for sharing buttons
 - Support for [Commento](https://commento.io)
+
+### Changed by this theme
+
+- Support for FontAwesome kits
+  - Support for social icons
+    - Social Icons can be either in the footer or in the main content area just like the original
+  - Support for sharing buttons (Depends on FontAwesome Kits)
+- Support for latest posts on front page
+- Support for submenus
+- Builtin (enable/disable) multilanguage menu
+  - Shows Language flags
+  - Menu will show alternative languages instead of current language
+  - When only 2 languages available no sub-menu will be displayed, it will switch between them instead
+- Optional overlay that darkens a bit the Background
+- Option to choose between read more in text instead of a button
+- Page title can be different than site title
+- Option to hide page title in single pages
+- Option to hide language selection in Single pages
 
 ## How to start
 
-You can download the theme manually by going to [https://github.com/rhazdon/hugo-theme-hello-friend-ng.git](https://github.com/rhazdon/hugo-theme-hello-friend-ng.git) and pasting it to `themes/hello-friend-ng` in your root directory.
+You can download the theme manually by going to [https://github.com/4s3ti/hugo-theme-hello-4s3ti.git](https://github.com/4s3ti/hugo-theme-hello-4s3ti.git) and pasting it to `themes/hello-4s3ti` in your root directory.
 
 You can also clone it directly to your Hugo folder:
 
 ``` bash
-$ git clone https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+$ git clone https://github.com/4s3ti/hugo-theme-hello-4s3ti.git themes/hello-4s3ti
 ```
 
 If you don't want to make any radical changes, it's the best option, because you can get new updates when they are available. To do so, include it as a git submodule:
 
 ``` bash
-$ git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+$ git submodule add https://github.com/4s3ti/hugo-theme-hello-4s3ti.git themes/hello-4s3ti
 ```
 
 ## How to configure
 
+
 The theme doesn't require any advanced configuration. Just copy the following config file.
 To see all possible configurations, [check the docs](docs/config.md).
-Note: There are more options to configure. Take a look into the `config.toml` in `exampleSite`.
+
+Note: There are more options to configure. Take a look into the `config.toml` and `config.yaml` in `exampleSite`.
 
 ``` toml
 baseurl      = "localhost"
 title        = "My Blog"
 languageCode = "en-us"
-theme        = "hello-friend-ng"
+theme        = "hello-4s3ti"
 paginate     = 10
 
 [params]
@@ -165,6 +189,16 @@ audio: path/to/file.mp3
 
 ## Social Icons:
 
+### FontAweome
+
+To use the Social Media icons and the Share Icons you are required to have at least a free [FontAwesome](https://fontawesome.com) Icon Kit   
+
+* Go to [FontAwesome](https://fontawesome.com)
+* Create an account
+* Go to kits, create new kit
+* Add the Kit Link to your config
+
+
 A large variety of social icons are available and can be configured like this:
 
 ```toml
@@ -172,22 +206,23 @@ A large variety of social icons are available and can be configured like this:
   name = "<site>"
   url = "<profile_URL>"
 ```
+If the icon is not available or you wish to use another icon, you can also override the icon by specifying the Icon value.
 
-Take a look into this [list](docs/svgs.md) of available icon options. 
+```toml
+[[params.social]]
+  name = "<site>"
+  url = "<profile_URL>"
+  icon = "<Icon>"
+```
+### Hide Title and Language on single pages
 
-If you need another one, just open an issue or create a pull request with your wished icon. :)
 
-## Known issues
-
-There is a bug in Hugo that sometimes causes the main page not to render correctly. The reason is an empty taxonomy part.
-Related issue tickets: [!14](https://github.com/rhazdon/hugo-theme-hello-friend-ng/issues/14) [!59](https://github.com/rhazdon/hugo-theme-hello-friend-ng/issues/59).
-
-Either you comment it out completely or you write the following in
-
-``` toml
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
+```toml
++++
+Title = "Ferramentas"
+hideTitle = true
+hidelanguage = true
++++
 ```
 
 ## How to edit the theme
@@ -196,11 +231,15 @@ Just edit it. You don't need any node stuff. ;)
 
 ## Sponsoring
 
-If you like my work and if you think this project is worth to support it, just <br />
-<a href="https://www.buymeacoffee.com/djordjeatlialp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+If you like this fork and think it is worth your support, you can always ...  <br />
+<a href="https://www.buymeacoffee.com/4s3ti" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
+However, please consider doing it to the guys that did most of the hard work, I only moved some bits of code here and there<br />
+
+| [djodjeatlialp](https://github.com/rhazdon/hugo-theme-hello-friend-ng) | [panr](https://github.com/panr/hugo-theme-hello-friend) |
+----------------|------|
+| <a href="https://www.buymeacoffee.com/djordjeatlialp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a> | <a href="https://www.buymeacoffee.com/panr" target="_blank"><img src="https://res.cloudinary.com/panr/image/upload/v1579374705/buymeacoffee_y6yvov.svg" alt="Buy Me A Coffee" ></a>
 
 ## Licence
-
-Copyright © 2019-2021 Djordje Atlialp
 
 The theme is released under the MIT License. Check the [original theme license](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/master/LICENSE.md) for additional licensing information.

@@ -3,16 +3,22 @@
 
         <div class="post-info">
             {{ if .IsTranslated }}
-                {{ i18n "postAvailable" }}
+              {{ if not .Params.hidelanguage }}
                 {{ range .Translations }}
+                {{ i18n "postAvailable" }}
                     <a href="{{ .Permalink }}"><span class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></span></a>
                 {{ end}}
+              {{ end }}
             {{ end }}
             </p>
         </div>
 
         <article>
-            <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+            {{if .Params.hideTitle }}
+            {{ else }}
+                <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+            {{ end }}
+
 
             {{ if .Params.Cover }}
                 <figure class="post-cover">

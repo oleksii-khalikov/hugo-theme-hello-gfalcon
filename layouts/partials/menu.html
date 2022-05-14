@@ -1,23 +1,48 @@
 <nav class="menu">
     <ul class="menu__inner">
         {{- $currentPage := . -}}
-        {{ range .Site.Menus.main -}}
-            <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
-        {{- end }}
+        {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+                <div class="submenu">
+                    <li class="dropdown">
+                        <a href="{{ .URL }}">
+                            {{ .Name }}
+                        </a>
+                        <div class="dropdown-content">
+                            {{ range .Children }}
+                               <a title="{{ .Name }}" href="{{ .URL }}">
+                                   {{ .Name }}
+                                </a>
+                            {{ end }}
+                        </div>
+                    </li>
+                </div>
+            {{ else }}
+            <div class="submenu">
+                <li class="dropdown">
+                    <a href="{{ .URL | relLangURL }}">
+                        {{ .Name }}
+                    </a>
+                </li>
+            </div>
+            {{ end }}
+        {{ end }}
 
+    {{ if .Site.IsMultiLingual }}
         {{- if .Site.Params.EnableGlobalLanguageMenu }}
         <div class="submenu">
             <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">{{ .Language }}</a>
+              {{ range first 1 (where $.Translations ".Lang" "!=" ".Lang") }}
+                <a href="{{ .Permalink }}" class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></a>
+              {{ end }}
                 <div class="dropdown-content">
-                    {{ if .Site.IsMultiLingual }}
-                        {{ range $.Translations }}
-                            <a title="{{ .Language }}" href="{{ .Permalink }}">{{ .Language }}</a>
-                        {{ end }}
-                    {{ end }}
+                  {{ range after 1 (where $.Translations ".Lang" "!=" ".Lang") }}
+                    <a title="{{ .Language }}"  class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared" href="{{ .Permalink }}"></a>
+                  {{ end }}
                 </div>
             </li>
         </div>
         {{- end }}
+    {{ end }}
     </ul>
 </nav>

@@ -3,9 +3,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 20px;
   // Default
   background: $light-background-header;
+  z-index: 5;
 
   @media (prefers-color-scheme: dark) {
     background: $dark-background-header;
@@ -30,6 +30,7 @@
 
     @media #{$media-size-phone} {
       flex-direction: row-reverse;
+      padding: 15px;
     }
   }
 

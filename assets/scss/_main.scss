@@ -58,6 +58,10 @@ body {
   }
 }
 
+main {
+  z-index: 4;
+}
+
 h2,
 h3,
 h4,
@@ -105,6 +109,24 @@ h4 {
 
 a {
   color: inherit;
+
+    &.read-more {
+        position: relative;
+        display: flex;
+        margin-bottom: 5px;
+        margin-top: 15px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500px;
+        
+        &.read-more:hover::before {
+          content: "{"
+        }
+
+        &.read-more:hover::after {
+          content: "}"
+        }
+  }
 }
 
 img {
@@ -347,6 +369,7 @@ ol ol {
   }
 }
 
+
 hr {
   width: 100%;
   border: none;
@@ -432,4 +455,124 @@ hr {
 // Prism JS Additionals
 .highlight {
   margin: 30px auto;
+}
+
+/* BG */
+
+.bg {
+  -moz-transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  transform: scale(1.0);
+  -webkit-backface-visibility: hidden;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bg:before, #bg:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.bg:before {
+  -moz-transition: background-color 2.5s ease-in-out;
+  -webkit-transition: background-color 2.5s ease-in-out;
+  -ms-transition: background-color 2.5s ease-in-out;
+  transition: background-color 2.5s ease-in-out;
+  -moz-transition-delay: 0.75s;
+  -webkit-transition-delay: 0.75s;
+  -ms-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  background-size: auto, 256px 256px;
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
+  z-index: 2;
+}
+
+.bg:after {
+  -moz-transform: scale(1.125);
+  -webkit-transform: scale(1.125);
+  -ms-transform: scale(1.125);
+  transform: scale(1.125);
+  -moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
+  -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
+  -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
+  transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+  
+  [data-theme=dark] & {
+    color: $dark-color
+  }
+
+  [data-theme=light] & {
+    color: $light-color
+  }
+}
+ul.icons li {
+  display: inline-block;
+  padding: 0 0.75rem 0 0;
+  font-size: 2rem
+}
+ul.icons li:last-child {
+  padding-right: 0;
+}
+ul.icons li a {
+  border-radius: 100%;
+  [data-theme=dark] & {
+    box-shadow: inset 0 0 0 1px #ffffff;
+  }
+  [data-theme=light] & {
+    box-shadow: inset 0 0 0 1px #1b1c1d;;
+  }
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  width: 4rem;
+  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  [data-theme=dark] & {
+    border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+  }
+  [data-theme=light] & {
+    border-bottom: dotted 1px rgba(0, 0, 0, 0.5);
+  }
+  text-decoration: none;
+  color: inherit;
+}
+ul.icons li a:hover {
+  [data-theme=dark] & {
+    background-color: rgba(255, 255, 255, 0.075);
+  }
+  [data-theme=light] & {
+    background-color: rgba(2, 2, 2, 0.100);
+  }
+}
+ul.icons li a:active {
+  background-color: rgba(255, 255, 255, 0.175);
 }
