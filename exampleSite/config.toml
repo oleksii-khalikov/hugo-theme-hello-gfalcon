@@ -67,10 +67,13 @@ defaultContentLanguage = pt-pt
 
   # Home subtitle of the index page.
   #
-  homeSubtitle = "Hello 4s3ti NG"
+  homeSubtitle = "Hello 4s3ti"
 
   # Set a background for the homepage
   # backgroundImage = "assets/images/background.jpg"
+  
+  # Adds a dark overlay over the background
+  # backgroundEffects = false
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   #
@@ -89,7 +92,7 @@ defaultContentLanguage = pt-pt
   # Per default, this option is off. 
   # The theme is respecting the prefers-color-scheme of the operating systeme. 
   # With this option on, the page user is able to set the scheme he wants. 
-  enableThemeToggle = false
+  enableThemeToggle = true
 
   # Sharing buttons
   #
