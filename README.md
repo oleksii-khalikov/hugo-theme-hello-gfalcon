@@ -85,7 +85,7 @@ $ git submodule add https://github.com/4s3ti/hugo-theme-hello-4s3ti.git themes/h
 The theme doesn't require any advanced configuration. Just copy the following config file.
 To see all possible configurations, [check the docs](docs/config.md).
 
-Note: There are more options to configure. Take a look into the `config.toml` and `config.yaml` in `exampleSite`.
+Note: There are more options to configure. Take a look into the `config.toml` and `config.yaml` in [exampleSite](./exampleSite/) directory.
 
 ``` toml
 baseurl      = "localhost"
