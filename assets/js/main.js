@@ -10,6 +10,7 @@ const chosenTheme = window.localStorage && window.localStorage.getItem("theme");
 const chosenThemeIsDark = chosenTheme == "dark";
 const chosenThemeIsLight = chosenTheme == "light";
 
+
 // Detect the color scheme the operating system prefers.
 function detectOSColorTheme() {
   if (chosenThemeIsDark) {
@@ -27,8 +28,14 @@ function detectOSColorTheme() {
 function switchTheme(e) {
   if (chosenThemeIsDark) {
     localStorage.setItem("theme", "light");
-  } else {
+  } else if (chosenThemeIsLight) {
     localStorage.setItem("theme", "dark");
+  } else {
+    if (document.documentElement.getAttribute("data-theme") == "dark") {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
   }
 
   detectOSColorTheme();
