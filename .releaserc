@@ -18,7 +18,13 @@
   ],
   "release": {
     "branches": [
-      "master",
+      "master", "test", "dev"
     ]
-  }
+  },
+
+    "branches": [
+    {name: 'master'},
+    {name: 'dev', channel: 'beta', prerelease: true},
+    {name: 'test', channel: 'test', prerelease: true}
+  ]
 }
