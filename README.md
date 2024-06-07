@@ -2,7 +2,7 @@
 
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-![Hello Friend 4s3ti](images/screenshot.png)
+![Hello Friend 4s3ti](https://raw.githubusercontent.com/coolapso/hugo-theme-hello-4s3ti/master/images/screenshot.png)
 
 ## General informations
 
