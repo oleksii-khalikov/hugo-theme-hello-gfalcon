@@ -35,7 +35,7 @@
 {{ if .Site.Params.fontAwesome }}
 {{ with.Site.Params.fontAwesome }}
 {{ if .kitURL }}
-<script src="{{ .Site.Params.fontAwesome.kitURL }}" crossorigin="anonymous"></script>
+<script src="{{ .kitURL }}" crossorigin="anonymous"></script>
 {{ else }}
 <link href="/static/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
 {{ if .all }}
