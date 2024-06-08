@@ -6,10 +6,6 @@ copyright: "All Rights Reserved"
 IsMultiLingual: true
 defaultContentLanguage: en
 
-params:
-  author: 
-    name: "coolapso"
-
 languages:
   pt-pt:
     weight: 1
@@ -52,6 +48,8 @@ languages:
 
 
 params:
+  author: 
+    name: "coolapso"
   defaultTheme: "dark"
   EnableThemeToggle: true 
 # gitUrl: "https://github.com/4s3ti"
