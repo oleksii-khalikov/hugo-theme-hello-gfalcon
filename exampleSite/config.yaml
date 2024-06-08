@@ -48,6 +48,7 @@ languages:
 
 
 params:
+  version: "dev"
   author: 
     name: "coolapso"
   defaultTheme: "dark"
