@@ -6,9 +6,9 @@
 
 ## General informations
 
-This theme is a mix between [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) and the original [hello-friend](https://github.com/panr/hugo-theme-hello-friend) considering both have features I like and lack others, I've decided to roll up my sleeve and tweak it a bit, the biggest change is most likely a dependency on fontawesome kits. 
+This theme is a mix between [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) and the original [hello-friend](https://github.com/panr/hugo-theme-hello-friend). Considering both have features I like and lack others, I've decided to roll up my sleeves and tweak it a bit. The biggest change is most likely FontAwesome bundling or loading your own kits if you want.
 
-You can see it in action here: https://4s3ti.net
+You can see it in action here: https://blog.coolapso.sh
 
 ---
 
@@ -47,10 +47,12 @@ You can see it in action here: https://4s3ti.net
 
 ### Changed by this theme
 
-- Support for FontAwesome kits
-  - Support for social icons
-    - Social Icons can be either in the footer or in the main content area just like the original
-  - Support for sharing buttons (Depends on FontAwesome Kits)
+- fontawesome
+  - Choose which fonts you want to load
+  - Load your own fontawesome kit
+- Support for social icons
+  - Social Icons can be either in the footer or in the main content area just like the original
+  - Support for sharing buttons (Depends on FontAwesome)
 - Support for latest posts on front page
 - Support for submenus
 - Builtin (enable/disable) multilanguage menu
@@ -191,13 +193,34 @@ audio: path/to/file.mp3
 
 ### FontAwesome
 
-To use the Social Media icons and the Share Icons you are required to have at least a free [FontAwesome](https://fontawesome.com) Icon Kit   
+Font awesome can be configured and you can load all fonts or only the fonts you wish. 
+
+To load all fonts: 
+```
+fontAwesome:
+    all: true
+```
+
+to load only specific fonts:
+
+```
+  fontAwesome: 
+    brands: true
+    solid: true
+    regular: true
+```
+
+fontawesome kits
 
 * Go to [FontAwesome](https://fontawesome.com)
 * Create an account
 * Go to kits, create new kit
 * Add the Kit Link to your config
 
+```
+fontAwesome:
+    kitURL: "https://kit.fontawesome.com/yourkitid.js"
+```
 
 A large variety of social icons are available and can be configured like this:
 

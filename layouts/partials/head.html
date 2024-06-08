@@ -27,14 +27,37 @@
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 {{ range $val := $.Site.Params.customCSS }}
-    {{ if gt (len $val) 0 }}
-        <link rel="stylesheet" type="text/css" href="{{ $val }}">
-    {{ end }}
+{{ if gt (len $val) 0 }}
+<link rel="stylesheet" type="text/css" href="{{ $val }}">
+{{ end }}
 {{ end }}
 
 {{ if .Site.Params.fontAwesome }}
-    <script src="{{ .Site.Params.fontAwesome.kitURL }}" crossorigin="anonymous"></script>
+{{ with.Site.Params.fontAwesome }}
+{{ if .kitURL }}
+<script src="{{ .Site.Params.fontAwesome.kitURL }}" crossorigin="anonymous"></script>
+{{ else }}
+<link href="/static/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+{{ if .all }}
+<link href="/static/fontawesome/css/all.min.css" rel="stylesheet" />
+{{ end }} 
+
+{{ if .brands }} 
+<link href="/static/fontawesome/css/brands.min.css" rel="stylesheet" />
+{{ end }} 
+
+{{ if .solid }}
+<link href="/static/fontawesome/css/solid.min.css" rel="stylesheet" />
+{{ end }} 
+
+{{ if .regular }} 
+<link href="/static/fontawesome/css/regular.min.css" rel="stylesheet" />
 {{ end }}
+
+{{ end }}
+{{ end }}
+{{ end }}
+
 <!-- Icons -->
 {{- partial "favicons.html" . }}
 
