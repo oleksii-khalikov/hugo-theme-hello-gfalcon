@@ -1,12 +1,14 @@
 baseURL: 'https://4s3ti.net/'
 languageCode: 'pt-pt'
 theme: "hello-friend-4s3ti"
-author: 
-  name: "4s3tidotnet"
 title: '4s3ti.net'
 copyright: "All Rights Reserved"
 IsMultiLingual: true
 defaultContentLanguage: pt-pt
+
+params:
+  author: 
+    name: "4s3tidotnet"
 
 languages:
   pt-pt:
