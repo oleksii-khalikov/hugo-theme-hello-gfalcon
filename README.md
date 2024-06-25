@@ -79,6 +79,7 @@ If you don't want to make any radical changes, it's the best option, because you
 
 ``` bash
 $ git submodule add https://github.com/oleksii-khalikov/hugo-theme-hello-gfalcon.git themes/hello-gfalcon
+$ git submodule add -b master-coolapso https://github.com/oleksii-khalikov/hugo-theme-hello-gfalcon.git themes/hello-4s3ti
 ```
 
 ## How to configure
