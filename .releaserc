@@ -1,5 +1,5 @@
 {
-  "name": "hugo-theme-hello-4s3ti",
+  "name": "hugo-theme-hello-gfalcon",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",

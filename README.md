@@ -1,4 +1,4 @@
-# Hello Friend 4s3ti
+# Hello Friend GFalcon
 
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
@@ -67,18 +67,18 @@ You can see it in action here: https://blog.coolapso.sh
 
 ## How to start
 
-You can download the theme manually by going to [https://github.com/4s3ti/hugo-theme-hello-4s3ti.git](https://github.com/4s3ti/hugo-theme-hello-4s3ti.git) and pasting it to `themes/hello-4s3ti` in your root directory.
+You can download the theme manually by going to [https://github.com/oleksii-khalikov/hugo-theme-hello-gfalcon.git](https://github.com/oleksii-khalikov/hugo-theme-hello-gfalcon.git) and pasting it to `themes/hello-gfalcon` in your root directory.
 
 You can also clone it directly to your Hugo folder:
 
 ``` bash
-$ git clone https://github.com/4s3ti/hugo-theme-hello-4s3ti.git themes/hello-4s3ti
+$ git clone https://github.com/oleksii-khalikov/hugo-theme-hello-gfalcon.git themes/hello-gfalcon
 ```
 
 If you don't want to make any radical changes, it's the best option, because you can get new updates when they are available. To do so, include it as a git submodule:
 
 ``` bash
-$ git submodule add https://github.com/4s3ti/hugo-theme-hello-4s3ti.git themes/hello-4s3ti
+$ git submodule add https://github.com/oleksii-khalikov/hugo-theme-hello-gfalcon.git themes/hello-gfalcon
 ```
 
 ## How to configure
@@ -93,7 +93,7 @@ Note: There are more options to configure. Take a look into the `config.toml` an
 baseurl      = "localhost"
 title        = "My Blog"
 languageCode = "en-us"
-theme        = "hello-4s3ti"
+theme        = "hello-gfalcon"
 paginate     = 10
 
 [params]
