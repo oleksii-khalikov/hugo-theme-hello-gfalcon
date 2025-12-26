@@ -14,6 +14,7 @@ defaultContentLanguage = 'pt-pt'
   backgroundImage = "static/coolapso.webp"
   backgroundEffects = true
   showPosts = true
+  paginate = 5
   tags = true
   ReadMoreText = true
   fontAwesome = { KitURL = "https://kit.fontawesome.com/0ed5cec925.js" }

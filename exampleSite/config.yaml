@@ -60,6 +60,8 @@ params:
   backgroundEffects: true
   showPosts: true
   tags: true
+  paginate: 3
+  
 # hideReadMore: true
   ReadMoreText: true
 # ReadMore: "foo"
@@ -74,7 +76,6 @@ params:
     # kitURL: "https://kit.fontawesome.com/yourkitid.js"
   ShowReadingTime: true
   LastModDisplay: true
-  tags: true
   logo:
     logoText: "coolapso.sh"
     logoCursorColor: "#ffffff"

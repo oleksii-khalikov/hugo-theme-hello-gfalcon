@@ -54,6 +54,7 @@ You can see it in action here: https://blog.coolapso.sh
   - Social Icons can be either in the footer or in the main content area just like the original
   - Support for sharing buttons (Depends on FontAwesome)
 - Support for latest posts on front page
+  - support for setting the number of posts to show
 - Support for submenus
 - Builtin (enable/disable) multilanguage menu
   - Shows Language flags
@@ -95,13 +96,13 @@ baseurl      = "localhost"
 title        = "My Blog"
 languageCode = "en-us"
 theme        = "hello-gfalcon"
-paginate     = 10
 
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
+  paginate        = 5
 
   # Subtitle for home
   homeSubtitle = "A simple and beautiful blog"
